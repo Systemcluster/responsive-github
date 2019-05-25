@@ -1,0 +1,137 @@
+/* different pages have various max-sizes set, make them responsive */
+
+/* general */
+
+body:not(.page-responsive) {
+	min-width: 768px;
+}
+
+@media (max-width: 1080px) {
+	body:not(.page-responsive) .container {
+		/* container has fixed width set */
+		width: auto;
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	body:not(.page-responsive) .subnav-search-input-wide {
+		/* font size changes to 16 on small size */
+		font-size: 14px;
+	}
+	body:not(.page-responsive) .discussion-timeline {
+		width: 100%;
+		max-width: none;
+	}
+	body:not(.page-responsive) .reponav {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap-reverse;
+	}
+	body:not(.page-responsive) .reponav .dropdown-menu {
+		width: 95px;
+	}
+}
+
+/* issues page */
+
+body:not(.page-responsive) .new-pr-form .Popover-message {
+	width: 100%;
+}
+@media (max-width: 1080px) {
+	body:not(.page-responsive) .discussion-sidebar + .discussion-timeline {
+		width: calc(100% - 200px);
+		padding-right: 20px;
+	}
+	body:not(.page-responsive) .timeline-new-comment {
+		max-width: none;
+	}
+}
+
+
+/* profile page */
+
+body:not(.page-responsive) .user-profile-nav {
+	width: 100% !important;
+}
+body:not(.page-responsive) .profile-timeline-year-list {
+	max-width: 100%;
+}
+body:not(.page-responsive) .js-calendar-graph {
+	overflow: auto;
+	direction: rtl;
+}
+body:not(.page-responsive) .user-profile-following-container .btn {
+	width: 100% !important;
+}
+@media (max-width: 1080px) {
+	body:not(.page-responsive) .header-search {
+		min-width: 150px !important;
+	}
+	body.page-profile .application-main .container-xl {
+		display: flex;
+		flex-direction: column;
+		place-content: stretch;
+	}
+	body.page-profile .h-card {
+		width: 100%;
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+		display: grid;
+		grid-template-columns: 272px calc(100% - 272px - 40px);
+		grid-gap: 0 40px;
+		grid-template-rows: auto auto auto auto auto;
+	}
+	body.page-profile .h-card .pb-3 .details-overlay {
+		/* block & report link */
+		float: right;
+		padding: 5px 0;
+	}
+	body.page-profile .u-photo,
+	body.page-profile .user-status-container  {
+		max-width: 272px;
+		grid-column: 1;
+	}
+	body.page-profile .user-status-container .d-flex {
+		height: 100%;
+	}
+	body:not(.page-responsive) .js-user-status-context {
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+	}
+	body:not(.page-responsive) .js-user-status-container {
+		flex: 1;
+	}
+	body.page-profile .vcard-names-container {
+		grid-column: 2;
+		grid-row: 1;
+		padding-top: 0 !important;
+	}
+	body.page-profile .u-photo {
+		grid-row: 1/4;
+	}
+	body.page-profile .js-profile-editable-area {
+		grid-column: 2;
+		grid-row: 2;
+	}
+	body.page-profile .js-profile-editable-area .btn {
+		margin-bottom: 0 !important;
+	}
+	body:not(.page-responsive) .user-profile-following-container  {
+		grid-column: 1;
+		grid-row: 5;
+	}
+	body.page-profile .js-profile-editable-area + .pb-3 {
+		grid-row: 1;
+		grid-column: 2;
+		position: relative;
+	}
+	body.page-profile .py-3.clearfix {
+		grid-row: 3/6;
+		grid-column: 2;
+		top: 0;
+	}
+	body.page-profile .h-card+div {
+		width: 100%;
+		padding-left: 0 !important;
+	}
+}
